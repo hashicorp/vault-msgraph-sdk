@@ -16,10 +16,10 @@ make generate
 If you need to add more APIs, either add them to the `APIS` line at the top of the `Makefile` or specify them on the command-line:
 
 ```
-make generate APIS="Applications Mail"
+make generate APIS="Applications.yml Mail.yml"
 ```
 
-Each API's SDK will be put into the corresponding subdirectory, e.g., `Applications` will be put in `applications/`.
+Each API's SDK will be put into the corresponding subdirectory, e.g., `Applications.yml` will be put in `applications/`.
 
 ## Example Usage
 
