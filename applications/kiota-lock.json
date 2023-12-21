@@ -1,0 +1,32 @@
+{
+  "descriptionHash": "D32D6A83B99CE832E14594D57D3B6A93E61C5F661581E2E00992E8EABCD761E6DC97CA792BA1E6E5FF705AB23E4A8D8B9E8DA3F7461B93E44B2535A4AE8C3A42",
+  "descriptionLocation": "../openapi.yaml",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.9.1",
+  "clientClassName": "ApiClient",
+  "clientNamespaceName": "github.com/hashicorp/vault-msgraph-sdk/applications",
+  "language": "Go",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": true,
+  "includeAdditionalData": false,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}

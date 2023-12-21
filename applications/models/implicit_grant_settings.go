@@ -1,0 +1,88 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// ImplicitGrantSettings 
+type ImplicitGrantSettings struct {
+    // Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
+    enableAccessTokenIssuance *bool
+    // Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
+    enableIdTokenIssuance *bool
+}
+// NewImplicitGrantSettings instantiates a new implicitGrantSettings and sets the default values.
+func NewImplicitGrantSettings()(*ImplicitGrantSettings) {
+    m := &ImplicitGrantSettings{
+    }
+    return m
+}
+// CreateImplicitGrantSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateImplicitGrantSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewImplicitGrantSettings(), nil
+}
+// GetEnableAccessTokenIssuance gets the enableAccessTokenIssuance property value. Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
+func (m *ImplicitGrantSettings) GetEnableAccessTokenIssuance()(*bool) {
+    return m.enableAccessTokenIssuance
+}
+// GetEnableIdTokenIssuance gets the enableIdTokenIssuance property value. Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
+func (m *ImplicitGrantSettings) GetEnableIdTokenIssuance()(*bool) {
+    return m.enableIdTokenIssuance
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *ImplicitGrantSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["enableAccessTokenIssuance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableAccessTokenIssuance(val)
+        }
+        return nil
+    }
+    res["enableIdTokenIssuance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableIdTokenIssuance(val)
+        }
+        return nil
+    }
+    return res
+}
+// Serialize serializes information the current object
+func (m *ImplicitGrantSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteBoolValue("enableAccessTokenIssuance", m.GetEnableAccessTokenIssuance())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("enableIdTokenIssuance", m.GetEnableIdTokenIssuance())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetEnableAccessTokenIssuance sets the enableAccessTokenIssuance property value. Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
+func (m *ImplicitGrantSettings) SetEnableAccessTokenIssuance(value *bool)() {
+    m.enableAccessTokenIssuance = value
+}
+// SetEnableIdTokenIssuance sets the enableIdTokenIssuance property value. Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
+func (m *ImplicitGrantSettings) SetEnableIdTokenIssuance(value *bool)() {
+    m.enableIdTokenIssuance = value
+}
+// ImplicitGrantSettingsable 
+type ImplicitGrantSettingsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetEnableAccessTokenIssuance()(*bool)
+    GetEnableIdTokenIssuance()(*bool)
+    SetEnableAccessTokenIssuance(value *bool)()
+    SetEnableIdTokenIssuance(value *bool)()
+}
