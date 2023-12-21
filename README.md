@@ -26,17 +26,17 @@ Each API's SDK will be put into the corresponding subdirectory, e.g., `Applicati
 ```go
 
 import (
-    "fmt"
+	"fmt"
 
-    "github.com/Azure/azure-sdk-for-go/sdk/azcore"
-    msgraphsdk "github.com/hashicorp/vault-msgraph-sdk/applications"
-    mscore "github.com/microsoftgraph/msgraph-sdk-go-core"
+	"github.com/Azure/azure-sdk-for-go/sdk/azcore"
+	msgraphsdk "github.com/hashicorp/vault-msgraph-sdk/applications"
+	mscore "github.com/microsoftgraph/msgraph-sdk-go-core"
 	"github.com/hashicorp/vault-msgraph-sdk/applications/applications"
 	auth "github.com/microsoftgraph/msgraph-sdk-go-core/authentication"
 )
 
 func newClient(graphURI string, creds azcore.TokenCredential, scopes []string) (*msgraphsdkgo.ApiClient, error) {
-    // ...
+	// ...
 	authProvider, err := auth.NewAzureIdentityAuthenticationProviderWithScopes(creds, scopes)
 	if err != nil {
 		return nil, err
@@ -49,6 +49,6 @@ func newClient(graphURI string, creds azcore.TokenCredential, scopes []string) (
 
 	adapter.SetBaseUrl(fmt.Sprintf("%s/v1.0", graphURI))
 	client := msgraphsdk.NewApiClient(adapter)
-    return client, nil
+	return client, nil
 }
 ```
