@@ -15,6 +15,7 @@ default: generate
 		--exclude-backward-compatible \
 		--additional-data=False
 	go mod tidy
+	copywrite headers
 
 generate: $(APIS)
 
